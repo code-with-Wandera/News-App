@@ -38,7 +38,7 @@ const fetchNews = async()=>{
   try {
     const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${currentPage}&pageSize=${PAGE_SIZE}&apiKey=${API_KEY}`);
 
-    console.log("API_KEY:", API_KEY);
+    console.log(response);
     
     const articles = response.data.articles ||[];
     setNews(articles);
@@ -57,7 +57,16 @@ useEffect (()=>{
 
   return (
     <>
-    <h2>App News</h2>
+    <div className="min-h-screen bg-base-200">
+      <header className="bg-primary text-primary-content p-4">
+
+        <div className="container mx-auto">
+        <h1 className="text-3xl font-bold">News App</h1>
+        </div>
+      </header>
+
+      <main className="container mx-auto p-4">Categories</main>
+    </div>
     </>
   )
 }
