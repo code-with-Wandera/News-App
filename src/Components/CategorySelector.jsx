@@ -12,7 +12,7 @@ const CategorySelector = ({ category, onCategoryChange }) => {
     ]
     return (
         <div className='flex justify-center'>
-            <div className='btn-group'>
+            <div className='btn-group space-x-6 p-2 text-sm md:text-base border-b border-gray-400'>
                 {Categories.map(cat => (
                     <button
                         onClick={() => onCategoryChange(cat.id)}
